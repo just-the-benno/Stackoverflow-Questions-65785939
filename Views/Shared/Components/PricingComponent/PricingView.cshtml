@@ -1,0 +1,27 @@
+﻿@model PricingViewModel
+ 
+<form class="text-left" method="post" enctype="multipart/form-data">
+
+    <input name="IsValidPricing" type="hidden" value="@ViewBag.isValid" />
+
+    <div class="form-group text-left">
+        <label asp-for="colCode" class="control-label"></label>
+        <input asp-for="colCode" class="form-control" id="colCodeId" />
+        <span asp-validation-for="colCode" class="text-danger"></span>
+    </div>
+
+    <div class="form-group text-left">
+        <label asp-for="colName" class="control-label"></label>
+        <input asp-for="colName" class="form-control" id="colNameId" />
+        <span asp-validation-for="colName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group text-left">
+        <label asp-for="formFile " class="control-label"></label>
+        <input type="file" accept=".xlsx, .csv" asp-for="formFile" id="MyInputFile" />
+    </div>
+
+    <div class="form-group mt-4">
+        <input type="submit" asp-action="ShowPricing" asp-controller="Home" value="Show" id="ShowPricingBtn" />
+    </div>
+</form>
